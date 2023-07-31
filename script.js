@@ -9,11 +9,78 @@ let quotes = [
 
 document.addEventListener("DOMContentLoaded", function(event) {
   // Random quote of the day generator
-  const randomQuote = function() {
-    document.querySelector('#quote-of-the-day').textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
-  };
-  randomQuote();
   
+  document.getElementById("main-title").innerHTML = "My name is DOM"; 
+document.body.style.backgroundColor = "red";
+
+let fav = document.getElementById("favorite-things");
+fav.removeChild(fav.lastElementChild);
+
+document.getElementById("main-title").innerHTML = "My name is DOM";
+
+document.querySelectorAll('.special-title').style.fontSize="2rem";
+
+let race = document.getElementById("past-races");
+race.removeChild(race.lastElementChild);
+
+let listChildren = race.children;
+console.log(listChildren);
+
+for (let i = 0; i < listChildren.length; i++) {
+console.log(listChildren[i]);
+}
+
+
+
+
+
+const orita = document.createElement(race.li);
+orita.textContent = 'Springfield';
+race.appendChild(orita)
+listChildren.appendChild(orita)
+let nochi = document.querySelectorAll(".past-races li");
+nochi.appendChild(orita)
+
+for (let i = 0; i < nochi.length; i++) {
+console.log(nochi[i])
+
+}
+ 
+
+
+
+
+document.querySelectorAll('.past-races li')
+    this.addEventListener.addEventListener('click', function() {
+      var li = this.parentNode
+      li.remove(4,1)
+    })
+  
+
+
+    nochi.addEventListener('click',function(e){
+      if(e.target.className == "remove"){ 
+      let length = document.querySelectorAll('li').length;
+      if(length > 4){ 
+      let remove = e.target.parentNode;
+      remove.parentNode.removeChild(remove);
+      }
+      }
+  });
+
+
+
+
+
+
+})
+
+const randomQuote = function() {
+  document.querySelector('#quote-of-the-day').textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
+  document.querySelector('#quote-title').addEventListener('click', randomQuote);
+};
+randomQuote();
+
   // Do all of your work inside the document.addEventListener  
 
   // Part 1
@@ -45,4 +112,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 
-});
